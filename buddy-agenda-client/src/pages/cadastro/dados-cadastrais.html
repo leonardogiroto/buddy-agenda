@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>CADASTRO <ion-icon class="HelpToggle" (click)="toggleHelp()" name="md-help" ></ion-icon></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list id="OwnerInfo" >
+
+    <ion-grid style="border-top: none;" >
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-person"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="Nome" [(ngModel)]="Owner.name" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <span style="font-size: 0.85em; font-weight: bold;" >CEP</span>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="Código Postal" [(ngModel)]="Owner.CEP" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-map"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-textarea placeholder="Endereço Completo, incluindo Complemento" [(ngModel)]="Owner.address" ></ion-textarea>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-at"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="E-mail" [(ngModel)]="Owner.email" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-key"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" disabled value="Mudar minha senha" class="PasswordInput" (click)="openPasswordChange()" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   
+  </ion-list>
+
+  <button class="MainColor" ion-button block (click)="saveInfo()" >SALVAR</button>
+
+  <div class="Notify" *ngIf="JustSaved" [@fadeIn]="JustSavedStr" >Dados salvos com sucesso!</div>
+  <div class="Notify" *ngIf="SendMail" [@fadeIn]="JustSavedStr" >E-mail encaminhado com sucesso!</div>
+
+</ion-content>
+
+<div id="Help" *ngIf="ShowHelp" (click)="toggleHelp()" >
+    <img class="Icon" src="assets/images/CadastroPageHelp.png" />
+</div>

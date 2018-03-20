@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Histórico</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<button class="AddButton" (click)="newAppointment()" >+</button>
+
+<ion-content padding>
+
+	<div class="PetTitle" >
+        <img *ngIf="Pet.Species=='Cão'" src="assets/images/DogIcon.png" />
+        <img *ngIf="Pet.Species=='Gato'" src="assets/images/CatIcon.png" />
+        <img *ngIf="Pet.Species=='Ave'" src="assets/images/BirdIcon.png" />
+        <img *ngIf="Pet.Species=='Exótico'" src="assets/images/ReptileIcon.png" />
+        <h3>{{Pet.Name}}</h3>
+	</div>
+
+  <p class="NothingHere" *ngIf="!Pet.History||Pet.History.length==0" >Ainda não há nada registrado no histórico clínico deste animal.</p>
+
+	<ion-card *ngFor="let hist of Pet.History | orderByPipe : 'desc' " >
+	    <ion-card-header>
+	      <ion-icon name="md-calendar"></ion-icon> <span>{{hist.date * 1000 | date : 'dd/MM/yyyy' }}</span>
+	    </ion-card-header>
+	    <ion-card-content>
+            <p class="bold" >{{hist.title}}</p>
+            <p>{{hist.description}}</p>
+	    </ion-card-content>
+	</ion-card>
+
+  <div class="Notify" *ngIf="JustSaved" [@fadeIn]="JustSavedStr" >Histórico adicionado com sucesso!</div>
+
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>PENDENTES <ion-icon class="HelpToggle" (click)="toggleHelp()" name="md-help" ></ion-icon></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<div class="NothingHere" *ngIf="getAppointments(null).length == 0" >
+		<p style="margin-top: 0;">Não há consultas pendentes!</p>
+		<img src="assets/images/NothingHereDog.jpeg" >
+		<p>Quer dar uma olhada na sua <a (click)="goToAgenda()" >Agenda</a>?</p>
+	</div>
+
+	<div class="NothingHere" *ngIf="getAppointments(null).length != 0" >
+		<p style="margin-top: 0;" >Quer dar uma olhada na sua <a (click)="goToAgenda()" >Agenda</a>?</p>
+	</div>
+
+	<ion-card *ngFor="let ap of getAppointments(null)" >
+		<ion-card-header>
+		  	<ion-icon name="md-calendar"></ion-icon> <span>{{ap.pet}} &nbsp;-&nbsp; {{ap.date}} às {{ap.time}}h</span>
+		</ion-card-header>
+		<ion-card-content>
+		  	<ion-grid>
+		    	<ion-row>
+		      		<ion-col width-90>
+		        		<p>{{ap.title}}</p>
+		        		<p>{{ap.brief}}</p>
+		        		<p class="bold" >{{ap.owner}}</p>
+		      		</ion-col>
+		      		<ion-col width-10>
+		        		<img *ngIf="ap.race=='Cão'" src="assets/images/DogIcon.png" />
+		        		<img *ngIf="ap.race=='Gato'" src="assets/images/CatIcon.png" />
+		        		<img *ngIf="ap.race=='Ave'" src="assets/images/BirdIcon.png" />
+		        		<img *ngIf="ap.race=='Exótico'" src="assets/images/ReptileIcon.png" />
+		      		</ion-col>
+		    	</ion-row>
+		    	<ion-row style="margin-top: 10px;" >
+		      		<ion-col width-50>
+		        		<button class="DefaultColor" ion-button (click)="openRejectModal(ap)" >RECUSAR</button>
+		      		</ion-col>
+		      		<ion-col width-50>
+		        		<button class="MainColor" ion-button (click)="openApproveModal(ap)" >APROVAR</button>
+		      		</ion-col>
+		    	</ion-row>
+		  	</ion-grid>
+		</ion-card-content>
+	</ion-card>
+
+	<div class="Notify" *ngIf="JustSaved" [@fadeIn]="JustSavedStr" >Consulta {{ReturnedAction}} com sucesso!</div>
+
+</ion-content>
+
+<div id="Help" *ngIf="ShowHelp" (click)="toggleHelp()" >
+    <img class="Icon" src="assets/images/PendentesPageHelp.png" />
+</div>

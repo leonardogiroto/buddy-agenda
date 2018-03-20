@@ -1,0 +1,62 @@
+veterinarios .SpecialtyDiv{
+    text-align: center;
+}
+veterinarios p.Specialty{
+	font-size: 1.25em;
+	text-align: center;
+	margin-top: 0;
+    margin-bottom: 0.75em;
+}
+veterinarios select{
+    border: 1px solid #aaa;
+    padding: 6px 12px;
+    width: 85%;
+    text-align: center;
+    font-size: 1.1em;
+    background: white;
+}
+veterinarios .VetSearch {
+	text-align: center;
+    width: 85%;
+    margin: 0em auto 1em auto;
+    border-bottom: 1px solid #aaa;
+    font-size: 1.25em;
+}
+veterinarios .VetSearch ion-input{
+	display: inline-block;
+	width: auto;
+}
+veterinarios .VetSearch ion-icon{
+	position: relative;
+	top: 2px;
+    font-size: 1.3em;
+    margin-right: 5px;
+}
+veterinarios .VetList {
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+veterinarios .VetList ion-item{
+    border-bottom: 1px solid #aaa;
+}
+veterinarios .VetList ion-item:last-child{
+    border-bottom: none;
+}
+veterinarios .VetList .Lefty{
+    margin-left: 0.5em;
+}
+veterinarios .VetList .Icon{
+    width: 18px;
+    margin-top: 5px;
+}
+veterinarios .NothingHere p{
+    font-size: 1.25em;
+    font-style: italic;
+    line-height: 1.6em;
+    margin: 0;
+    text-align: center;
+}
+veterinarios .NothingHere .Icon{
+    margin-top: 0.75em;
+    margin-bottom: 0.25em;
+}

@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Buddy <ion-icon class="HelpToggle" (click)="toggleHelp()" name="md-help" ></ion-icon></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<ion-list id="BuddyInfo" >
+
+	    <ion-grid class="SpeciesIcons" style="border-top: none;" >
+	      <ion-row>
+	        <ion-col (click)="setSpecies('Cão')" [ngClass]="{ 'Active': Buddy.Species == 'Cão' }" class="DogIcon align-center" width-25 >
+	        	<img src="assets/images/DogIcon.png" />
+	        </ion-col>
+	        <ion-col (click)="setSpecies('Gato')" [ngClass]="{ 'Active': Buddy.Species == 'Gato' }" class="CatIcon align-center" width-25 >
+	        	<img src="assets/images/CatIcon.png" />
+	        </ion-col>
+	        <ion-col (click)="setSpecies('Ave')" [ngClass]="{ 'Active': Buddy.Species == 'Ave' }" class="BirdIcon align-center" width-25 >
+	        	<img src="assets/images/BirdIcon.png" />
+	        </ion-col>
+	        <ion-col (click)="setSpecies('Exótico')" [ngClass]="{ 'Active': Buddy.Species == 'Exótico' }" class="ReptileIcon align-center" width-25 >
+	        	<img src="assets/images/ReptileIcon.png" />
+	        </ion-col>
+	      </ion-row>
+	    </ion-grid>
+
+	    <ion-grid>
+	      <ion-row>
+	         <ion-col class="PawIcon" width-10>
+		    	<img style="padding: 0px 0px 0px 7px;" src="assets/images/PetNameIcon.png" > 
+	        </ion-col>
+	        <ion-col width-90>
+	          <ion-input type="text" placeholder="Nome do Animal" [(ngModel)]="Buddy.Name" ></ion-input>
+	        </ion-col>
+	      </ion-row>
+	    </ion-grid>
+
+	    <ion-grid>
+	      <ion-row>
+	        <ion-col class="PawIcon align-center" width-10>
+		    	<img *ngIf="Buddy.Species=='Cão'"  src="assets/images/DogPawIcon.png" > 
+		    	<img *ngIf="Buddy.Species=='Gato'" src="assets/images/CatPawIcon.png" > 
+		    	<img *ngIf="Buddy.Species=='Ave'" src="assets/images/BirdPawIcon.png" > 
+		    	<img *ngIf="Buddy.Species=='Exótico'" src="assets/images/ExoticPawIcon.png" > 
+	        </ion-col>
+	        <ion-col width-90>
+	          <ion-input type="text" placeholder="Raça" [(ngModel)]="Buddy.Race" ></ion-input>
+	        </ion-col>
+	      </ion-row>
+	    </ion-grid>
+	    <ion-grid>
+	      <ion-row>
+	         <ion-col class="PawIcon" width-10>
+		    	<img style="padding: 0px 0px 0px 7px;" src="assets/images/PetGenderIcon.png" > 
+	        </ion-col>
+	        <ion-col width-90>
+	        	<ion-list radio-group [(ngModel)]="Buddy.Gender" style="margin: 0;" >
+		        	<ion-row class="RadioGender" >
+		         		<ion-col width-50>
+							<ion-item>
+								<ion-radio value="Macho" ></ion-radio>
+								<ion-label>Macho</ion-label>
+							</ion-item>
+						</ion-col>
+		         		<ion-col width-50>
+							<ion-item>
+								<ion-radio value="Fêmea" ></ion-radio>
+								<ion-label>Fêmea</ion-label>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+				</ion-list>
+	        </ion-col>
+	      </ion-row>
+	    </ion-grid>
+
+	    <ion-grid>
+	      <ion-row>
+	        <ion-col class="align-center" width-10>
+	          <ion-icon name="md-calendar"></ion-icon>
+	        </ion-col>
+	        <ion-col width-90>
+	          <ion-input type="text" placeholder="Data de Nascimento" [(ngModel)]="Buddy.Birthdate" ></ion-input>
+	        </ion-col>
+	      </ion-row>
+	    </ion-grid>
+
+	    <ion-grid>
+	      <ion-row>
+	        <ion-col class="align-center" width-10>
+		    	<img style="padding: 0px 8px;" src="assets/images/PetWeightIcon.png" > 
+	        </ion-col>
+	        <ion-col width-90>
+	          <ion-input type="text" placeholder="Peso" [(ngModel)]="Buddy.Weight" ></ion-input>
+	        </ion-col>
+	      </ion-row>
+	    </ion-grid>
+	   
+	  </ion-list>
+
+	  <div class="ViewHistory" >
+			<a (click)="viewHistory()" >
+				<img src="assets/images/ClinicalHistoryIcon.png" > &nbsp;&nbsp;&nbsp;<span>{{HistoryText}}</span>
+			</a>
+		</div>
+
+	  <button class="MainColor" ion-button block (click)="saveInfo()" >SALVAR</button>
+
+	  <div class="Notify" *ngIf="JustSaved" [@fadeIn]="JustSavedStr" >Dados salvos com sucesso!</div>
+	  <div class="Notify" *ngIf="NeedFilling" [@fadeIn]="JustSavedStr" >Por favor, preencha todos os campos</div>
+
+</ion-content>
+
+<div id="Help" *ngIf="ShowHelp" (click)="toggleHelp()" >
+    <img class="Icon" src="assets/images/NewBuddyPageHelp.png" />
+</div>

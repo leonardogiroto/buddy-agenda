@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{Title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding id="ConfirmModal" >
+
+	<h2>{{Appointment.date}} às {{Appointment.time}}h</h2>
+	<h3>{{Appointment.species}} - {{Appointment.pet}}</h3>
+	<p>{{Message}}</p>
+
+	<p style="margin-bottom: 0;" >Motivo</p>
+    <ion-item>
+   		<ion-textarea maxlength="50" [(ngModel)]="DeclineReason" ></ion-textarea>
+    </ion-item>
+
+	<ion-grid class="ButtonsGrid" >
+	  <ion-row>
+	    <ion-col width-50 style="padding-left: 2%;" >
+	    	<button class="DefaultColor" ion-button block (click)="closeModal(0)" >VOLTAR</button>
+	    </ion-col>
+	    <ion-col width-50 style="padding-right: 2%;" >
+	    	<button class="MainColor" ion-button block (click)="closeModal(1)" >SIM</button>
+	    </ion-col>
+	  </ion-row>
+	</ion-grid>
+
+</ion-content>

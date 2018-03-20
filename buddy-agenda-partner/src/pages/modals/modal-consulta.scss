@@ -1,0 +1,40 @@
+modal-consulta.ion-page.show-page {
+    position: initial;
+    width: 85%;
+    height: 400px;
+    margin: 0 auto;
+}
+.TimeSelectRow {
+	text-align: center;
+	margin-top: 5px;
+}
+.TimeSelectRow .Title{
+    font-weight: bold;
+    font-size: 1.3em;
+    position: relative;
+    top: 34px;
+    right: 6%;
+}
+.TimeSelectRow .Divisor{
+    position: relative;
+    top: 34px;
+}
+.TimeSelectRow .SelectedTime .TimeValue{
+	border: 1px solid #ddd;
+	padding: 15px;
+}
+.TimeSelectRow .SelectedTime ion-icon{
+	transform: scale(1.2,1);
+    font-size: 1.5em;
+}
+.TimeSelectRow.DownRow{
+    border-top: 2px solid #008080;
+    margin-top: 25px;
+    padding-top: 25px;
+}
+.ButtonsGrid{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+}

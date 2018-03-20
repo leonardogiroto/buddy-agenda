@@ -1,0 +1,22 @@
+modal-calendar.ion-page.show-page {
+	background: white;
+	position: initial;
+    width: 88%;
+    height: 355px;
+    margin: 0 auto;
+}
+modal-calendar calendar div.monthview-container{
+	height: auto!important;
+}
+ion-header ion-buttons span.button-inner{
+	font-family: 'Architects Daughter';
+	color: #f6f6f6;
+	font-size: 1.15em;
+}
+table.monthview-datetable td.monthview-selected{
+	background: rgba(0, 128, 128, 0.8);
+}
+table.monthview-datetable th small{
+	font-size: 63%;
+    text-transform: lowercase;
+}

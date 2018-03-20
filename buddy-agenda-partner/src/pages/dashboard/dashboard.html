@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<h1>Bem-vindo de volta :)</h1>
+
+	<ion-card id="DashboardAgenda" >
+    	<ion-card-header>
+      		<ion-icon name="md-calendar"></ion-icon> <span>Próximas Consultas ({{today | date : 'dd/MM'}})</span>
+    	</ion-card-header>
+    	<ion-card-content *ngFor="let ap of Appointments | orderByPipe" (click)="viewAppointment(ap)" >
+      		<ion-grid>
+        		<ion-row>
+          			<ion-col width-90>
+	            		<p>{{ap.title}}</p>
+	            		<p class="bold" >{{ap.time}} &nbsp;-&nbsp; {{ap.neighborhood}}</p>
+          			</ion-col>
+          			<ion-col width-10>
+			            <img *ngIf="ap.species=='Cão'" src="assets/images/DogIcon.png" />
+			            <img *ngIf="ap.species=='Gato'" src="assets/images/CatIcon.png" />
+			            <img *ngIf="ap.species=='Ave'" src="assets/images/BirdIcon.png" />
+			            <img *ngIf="ap.species=='Exótico'" src="assets/images/ReptileIcon.png" />
+		          	</ion-col>
+        		</ion-row>
+      		</ion-grid>
+    	</ion-card-content>
+  	</ion-card>
+
+  	<ion-card id="DashboardStats" >
+    	<ion-card-header>
+      		<ion-icon name="md-stats"></ion-icon> <span>Estatísticas de {{today.getMonth() | monthname }}</span>
+    	</ion-card-header>
+    	<ion-card-content>
+    		<ion-card class="Appointments" >
+			  	<ion-card-content>
+			  		<ion-grid>
+		        		<ion-row>
+		          			<ion-col class="Icon" width-30>
+			  					<ion-icon name="md-calendar"></ion-icon>
+		          			</ion-col>
+		          			<ion-col width-70>
+						    	<p class="Title" >Agendamentos</p>
+						    	<p class="Value" >50</p>
+				          	</ion-col>
+		        		</ion-row>
+		      		</ion-grid>
+			 	</ion-card-content>
+			</ion-card>
+
+    		<ion-card class="Appointments" >
+			  	<ion-card-content>
+			  		<ion-grid>
+		        		<ion-row>
+		          			<ion-col class="Icon" width-30>
+			  					<ion-icon name="md-heart"></ion-icon>
+		          			</ion-col>
+		          			<ion-col width-70>
+						    	<p class="Title" >Recomendações</p>
+						    	<p class="Value" >5</p>
+				          	</ion-col>
+		        		</ion-row>
+		      		</ion-grid>
+			 	</ion-card-content>
+			</ion-card>
+    	</ion-card-content>
+  	</ion-card>  	
+
+</ion-content>

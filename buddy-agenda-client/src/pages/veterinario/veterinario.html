@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Veterinário <ion-icon class="HelpToggle" (click)="toggleHelp()" name="md-help" ></ion-icon></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<div class="Header" >
+		<h2><ion-icon name="md-heart" *ngIf="IsFavorite" ></ion-icon> {{Vet.Gender}} {{Vet.Name}}</h2>
+		<h3>
+			{{Vet.Specialty}}<br>
+			CRMV {{Vet.CRMV}}
+		</h3>
+	</div>
+
+	<div class="Favorite" >
+		<p (click)="toggleFavorite()" >
+			<ion-icon name="md-heart" *ngIf="Vet.IsFavorite" ></ion-icon><ion-icon name="md-heart-outline" *ngIf="!Vet.IsFavorite" ></ion-icon> <span>Favoritar</span>
+		</p>
+	</div>
+
+	<div class="Profile" >
+		<p style="text-align: justify;" >{{Vet.Profile}}</p>
+		<p class="NumFav" ><ion-icon name="md-checkmark" ></ion-icon> {{Vet.Favorites}} Indicações</p>
+	</div>
+
+	<div class="Consulta" >
+		<p>
+			<b>Preço da Consulta: R${{Vet.Price}},00</b><br>
+			<span class="PayMethods" >Formas de Pagamento: {{Vet.PaymentMethods}}.</span>
+		</p>
+		<p>
+			<b>Regiões Atendidas:</b><br>
+			{{Vet.Regions}}.
+		</p>
+	</div>
+
+	<div class="Appointment" >
+		<p><ion-icon name="md-calendar" ></ion-icon> Agendar Horário</p>
+		<div class="CurrentDate" style="margin-bottom: 2.5px;" >
+		    <div style="display: inline-block;" (click)="previousDay()" >
+		      <ion-icon name="ios-arrow-back" ></ion-icon><ion-icon name="ios-arrow-back" ></ion-icon>
+		    </div>
+		    <span (click)="openCalendar()" >{{SearchDate | date : 'dd/MM' }}</span>
+		    <div style="display: inline-block;" (click)="nextDay()" >
+		      <ion-icon name="ios-arrow-forward" ></ion-icon><ion-icon name="ios-arrow-forward" ></ion-icon>
+		    </div>
+		</div>
+		<p class="Weekday" >( {{SearchDate | date : 'EEEE'}} )</p>
+		<div class="Timetable" >
+			<div class="Time" *ngFor="let Tt of Timetable" (click)="newSchedule(Tt)" >{{Tt}}</div>
+			<p *ngIf="Timetable.length==0" >Não há horários disponíveis<br>para a data selecionada.</p>
+		</div>
+	</div>
+
+</ion-content>
+
+<div id="Help" *ngIf="ShowHelp" (click)="toggleHelp()" >
+    <img class="Icon" style="width: 100%;" src="assets/images/VetSinglePageHelp.png" />
+</div>

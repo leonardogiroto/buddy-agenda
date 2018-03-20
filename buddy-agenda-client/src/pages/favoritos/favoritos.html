@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>FAVORITOS <ion-icon class="HelpToggle" (click)="toggleHelp()" name="md-help" ></ion-icon></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <div class="VetSearch" >
+    <ion-icon name="md-search" ></ion-icon>
+    <ion-input type="text" placeholder="Buscar Favorito" [(ngModel)]="SearchVal" ></ion-input>
+  </div>
+
+  <ion-list class="VetList" >
+      <ion-item (click)="viewVet(Vet)" *ngFor="let Vet of Favorites | filter : FilterFields : SearchVal | orderByPipe : 'Favorites' : 'dsc'" >
+          <ion-grid>
+          <ion-row>
+            <ion-col width-10>
+              <img class="Icon" src="assets/images/{{Vet.Icon}}" />
+            </ion-col>
+            <ion-col width-70 class="Lefty" >
+                {{Vet.Gender}} {{Vet.Name}}<br>
+                <small>{{Vet.Specialty}}</small>
+            </ion-col>
+            <ion-col width-20 style="text-align: right;" >
+              {{Vet.Favorites}}<br>
+                <small>Indicações</small>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+      </ion-item>
+  </ion-list>
+
+
+  <div class="NothingHere" *ngIf="(Favorites | filter : FilterFields : SearchVal)?.length==0" >
+      <img class="Icon" src="assets/images/NotFoundCat.jpeg" />
+    <p>
+      Veterinário não encontrado...<br>
+      Quer dar uma olhada na <a (click)="goToVets()">lista completa?</a>
+    </p>
+  </div>
+
+</ion-content>
+
+<div id="Help" *ngIf="ShowHelp" (click)="toggleHelp()" >
+    <img class="Icon" src="assets/images/FavoritesPageHelp.png" />
+</div>

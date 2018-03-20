@@ -1,0 +1,84 @@
+<!--
+  Generated template for the ModalComponent page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{Weekday}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-grid>
+	  <ion-row class="TimeSelectRow" >
+	    <ion-col width-80 style="margin: 0 auto;" >
+	  		<ion-row>
+			    <ion-col class="Title" width-30>
+			    	Início:
+			    </ion-col>
+			    <ion-col class="SelectedTime" width-25>
+			    	<ion-icon name="ios-arrow-up" (click)="increaseHour('Start')" ></ion-icon>
+			    	<div class="TimeValue" >
+			    		{{displayValue(StartsHour)}}
+			    	</div>
+			    	<ion-icon name="ios-arrow-down" (click)="decreaseHour('Start')"  ></ion-icon>
+			    </ion-col>
+			    <ion-col width-10 class="Divisor" >:</ion-col>
+			    <ion-col class="SelectedTime"  width-25>
+			    	<ion-icon name="ios-arrow-up" (click)="changeMinute('Start')" ></ion-icon>
+			    	<div class="TimeValue" >
+			    		{{displayValue(StartsMin)}}
+			    	</div>
+			    	<ion-icon name="ios-arrow-down" (click)="changeMinute('Start')" ></ion-icon>
+			    </ion-col>
+		    </ion-row>
+	    </ion-col>
+	  </ion-row>
+	</ion-grid>
+
+	<ion-grid>
+	  <ion-row class="TimeSelectRow DownRow" >
+	    <ion-col width-80 style="margin: 0 auto;" >
+	  		<ion-row>
+			    <ion-col class="Title" width-30>
+			    	Término:
+			    </ion-col>
+			    <ion-col class="SelectedTime" width-25>
+			    	<ion-icon name="ios-arrow-up" (click)="increaseHour('End')" ></ion-icon>
+			    	<div class="TimeValue" >
+			    		{{displayValue(EndsHour)}}
+			    	</div>
+			    	<ion-icon name="ios-arrow-down" (click)="decreaseHour('End')" ></ion-icon>
+			    </ion-col>
+			    <ion-col width-10 class="Divisor" >:</ion-col>
+			    <ion-col class="SelectedTime"  width-25>
+			    	<ion-icon name="ios-arrow-up" (click)="changeMinute('End')" ></ion-icon>
+			    	<div class="TimeValue" >
+			    		{{displayValue(EndsMin)}}
+			    	</div>
+			    	<ion-icon name="ios-arrow-down" (click)="changeMinute('End')" ></ion-icon>
+			    </ion-col>
+		    </ion-row>
+	    </ion-col>
+	  </ion-row>
+	</ion-grid>
+
+	<ion-grid class="ButtonsGrid" >
+	  <ion-row>
+	    <ion-col width-50 style="padding-right: 2%;" >
+	    	<button class="MainColor" ion-button block (click)="saveModal()" >SALVAR</button>
+	    </ion-col>
+	    <ion-col width-50 style="padding-left: 2%;" >
+	    	<button class="DefaultColor" ion-button block (click)="closeModal()" >VOLTAR</button>
+	    </ion-col>
+	  </ion-row>
+	</ion-grid>
+
+</ion-content>
+

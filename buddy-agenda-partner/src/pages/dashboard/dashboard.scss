@@ -1,0 +1,47 @@
+page-page2 {
+
+}
+h1 {
+    text-align: center;
+    padding: 0.4em 0 0.6em 0;
+    font-size: 1.8em;
+}
+ion-card-header ion-icon{
+	font-size: 1.5em;
+}
+ion-card-header span{
+	font-size: 1.1em;
+}
+
+#DashboardAgenda ion-card-content{
+    border-top: 1px solid #ddd;
+}
+
+#DashboardStats .Appointments{
+	background: #008080;
+}
+#DashboardStats .Appointments .Icon{
+	display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+#DashboardStats .Appointments p, #DashboardStats .Appointments ion-icon{
+	color: #ececec;
+}
+#DashboardStats .Appointments ion-icon{
+	font-size: 3.6em;
+}
+#DashboardStats .Appointments p{
+	font-family: 'Architects Daughter';
+	text-align: right;	
+}
+#DashboardStats .Appointments p.Title{
+	font-size: 1.1em;
+}
+#DashboardStats .Appointments p.Value{
+	font-size: 2.25em;
+    margin-top: 5px;
+}
+#DashboardStats .Appointments p.Value span.Smaller{
+	font-size: 85%;
+}

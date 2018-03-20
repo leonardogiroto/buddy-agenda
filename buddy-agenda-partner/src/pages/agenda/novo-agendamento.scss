@@ -1,0 +1,27 @@
+.PetTitle ion-icon{
+    font-size: 1.5em;
+    margin-right: 8px;
+}
+.SpeciesIcons ion-col.DogIcon{
+	padding: 1em 2em;
+}
+.SpeciesIcons ion-col.CatIcon{
+	padding: 1em 1.85em;
+}
+.SpeciesIcons ion-col.BirdIcon{
+	padding: 1em 1.6em;
+}
+.SpeciesIcons ion-col.ReptileIcon{
+	padding: 1em 1.6em;
+}
+.SpeciesIcons ion-col.DogIcon, .SpeciesIcons ion-col.CatIcon,
+.SpeciesIcons ion-col.BirdIcon, .SpeciesIcons ion-col.ReptileIcon{
+	opacity: 0.4;
+}
+.SpeciesIcons ion-col.DogIcon.Active, .SpeciesIcons ion-col.CatIcon.Active,
+.SpeciesIcons ion-col.BirdIcon.Active, .SpeciesIcons ion-col.ReptileIcon.Active{
+	opacity: 1;
+}
+ion-col.PawIcon img {
+	width: 27px;
+}

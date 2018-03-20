@@ -1,0 +1,149 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+/* Custom General Classes */
+.bold {
+	font-weight: bold!important;
+}
+.align-center {
+	text-align: center;
+}
+/* Custom Ionic Styles */
+ion-title{
+	font-family: 'Architects Daughter';
+}
+ion-navbar .toolbar-background{
+	background: #008080;
+}
+ion-navbar .bar-buttons, ion-navbar .toolbar-title, ion-navbar .back-button{
+	color: #f6f6f6;
+    text-transform: uppercase;
+}
+ion-label ion-icon {
+	color: #1a1a1a;
+}
+button.MainColor, button.DefaultColor{
+	font-family: 'Architects Daughter';
+}
+button.MainColor{
+	background: #008080;
+}
+button.DefaultColor{
+	background: white;
+	color: #111;
+}
+.menu-inner ion-header .toolbar-title{
+	text-align: center;
+}
+.menu-inner ion-header .toolbar-title img{
+	padding: 10px 25px;
+    width: 85%;
+}
+.menu-inner .scroll-content ion-list.list-md{
+	margin: 5px 0 16px 0;
+}
+.menu-inner .scroll-content ion-list button.item{
+	border-bottom: 1px solid #ddd;
+}
+.menu-inner .scroll-content ion-list button.item ion-label span{
+	float: right;
+}
+.menu-inner .scroll-content ion-list button.log-out{
+	border-bottom: none;
+	border-top: 1px solid #ddd;
+	position: absolute;
+	bottom: 0;
+}
+.menu-inner .scroll-content ion-list button.item .input-wrapper{
+    font-size: 1.2em;
+}
+button.AddButton{
+	position: absolute;
+    z-index: 10;
+    right: 20px;
+    bottom: 20px;
+    background: #ea8d1b;
+    border-radius: 100%;
+    color: white;
+    font-size: 2.5em;
+    width: 50px;
+    height: 50px;
+}
+
+.PetTitle{
+	border-bottom: 2px solid #008080;
+	text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5em;
+}
+.PetTitle img{
+    width: 18px;
+    margin-right: 0.3em;
+}
+.PetTitle h3{
+    margin-left: 0.3em;
+}
+
+.DidYouKnow{
+	border-top: 1px solid #008080;
+    font-style: italic;
+    padding: 0.25em 5.75em 0.25em 1.25em;
+    position: absolute;
+    bottom: 0;
+    margin: 0px -20px;
+    width: 120%;
+    text-align: center;
+}
+
+/* Modals */
+.modal-wrapper{
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+}
+
+/* Form Components */
+.radio-md .radio-checked {
+    border-color: #008080;
+}
+.radio-md .radio-inner{
+    background-color: #008080;
+}
+.item-radio-checked.item-md ion-label {
+    color: #008080;
+}
+
+/* Help */
+#Help{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0,0.25);
+    height: 100%;
+    z-index: 10;
+}
+#Help img{
+    height: 100%;
+}
+.HelpToggle{
+    float: right;
+    position: relative;
+    top: 4px;
+    right: 8px;
+}

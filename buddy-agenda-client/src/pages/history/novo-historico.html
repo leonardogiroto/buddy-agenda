@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Novo Histórico</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list id="OwnerInfo" >
+
+    <ion-grid style="border-top: none;" >
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-calendar"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="Data" [(ngModel)]="History.date" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-bookmark"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="Título" [(ngModel)]="History.title" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="align-center" width-10 >
+          <ion-icon name="md-text"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-textarea placeholder="Descrição" [(ngModel)]="History.description" ></ion-textarea>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   
+  </ion-list>
+
+  <button class="MainColor" ion-button block (click)="saveInfo()" >SALVAR</button>
+
+  <div class="Notify" *ngIf="JustSaved" [@fadeIn]="JustSavedStr" >Por favor, preencha todos os campos</div>
+
+</ion-content>

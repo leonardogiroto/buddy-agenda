@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{Title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding id="MessageModal" >
+
+	<p>{{Message}}</p>
+	<p>{{SubMessage}}</p>
+
+	<ion-grid class="ButtonsGrid" >
+	  <ion-row>
+	    <ion-col width-50 style="padding-left: 2%;" >
+	    	<button class="DefaultColor" ion-button block (click)="closeModal(0)" >VOLTAR</button>
+	    </ion-col>
+	    <ion-col width-50 style="padding-right: 2%;" >
+	    	<button class="MainColor" ion-button block (click)="closeModal(1)" >SIM</button>
+	    </ion-col>
+	  </ion-row>
+	</ion-grid>
+
+</ion-content>
+

@@ -1,0 +1,23 @@
+buddies .List{
+   margin-top: -14px;
+}
+buddies .List ion-row{
+	padding: 1em 2em;
+    margin: 0px -20px;
+    width: 120%;
+    border-bottom: 1px solid #ddd;
+}
+buddies .List .Image{
+	max-width: 22px;
+}
+buddies .List .Info {
+	padding: 0em 1.5em;
+}
+buddies .List .Info p{
+	margin: 0;
+	font-size: 110%;
+}
+buddies .List ion-icon{
+	font-size: 1.65em;
+	margin-top: 0.15em;
+}

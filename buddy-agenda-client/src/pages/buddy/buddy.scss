@@ -1,0 +1,44 @@
+#BuddyInfo{
+    margin-bottom: 0;
+}
+#BuddyInfo ion-grid{
+    border-top: 1px solid #ddd;
+    margin: 0px -20px;
+    width: 120%;
+    padding: 0px 40px 0px 15px;
+}
+#BuddyInfo ion-grid ion-row{
+	display: flex;
+    align-items: center;
+}
+#BuddyInfo ion-icon{
+	font-size: 1.4em;
+}
+#BuddyInfo ion-col img{
+    padding: 0px 4px;
+}
+#BuddyInfo ion-input{
+	border: none;
+}
+#BuddyInfo ion-textarea textarea{
+	height: 70px
+}
+#BuddyInfo .PasswordInput input{
+    color: #008080;
+    opacity: 1;
+    text-decoration: underline;
+}
+.Notify{
+	position: fixed;
+    bottom: 0;
+    text-align: center;
+    font-size: 1.2em;
+    right: 0;
+    padding: 0.6em 1.5em;
+    background: #444;
+    width: 100%;
+    color: white;
+}
+.RadioGender ion-label{
+    font-size: 0.95em;
+}

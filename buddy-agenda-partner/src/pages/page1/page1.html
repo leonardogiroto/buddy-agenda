@@ -1,0 +1,26 @@
+<ion-content padding>
+  <h3>BUDDY AGENDA</h3>
+  <p>
+    Encontre clientes e organize sua agenda de forma prática
+  </p>
+
+  <ion-list>
+    <ion-item style="margin-bottom: 10px;" >
+      <ion-input type="text" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="Senha"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="firstButton" width-50>
+        <button class="MainColor" ion-button (click)="goToDashboard()" >LOGIN</button>
+      </ion-col>
+      <ion-col class="secondButton" width-50>
+        <button class="DefaultColor" ion-button >CADASTRO</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

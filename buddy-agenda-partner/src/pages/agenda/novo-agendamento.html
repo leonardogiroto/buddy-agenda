@@ -1,0 +1,128 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Novo Evento</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<ion-list id="OwnerInfo" >
+
+	<ion-grid style="border-top: none;" >
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-bookmark"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="Título" [(ngModel)]="Appointment.title" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-person"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="Nome do Cliente" [(ngModel)]="Appointment.owner" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="SpeciesIcons" >
+      <ion-row>
+        <ion-col (click)="setSpecies('Cão')" [ngClass]="{ 'Active': Appointment.species == 'Cão' }" class="DogIcon align-center" width-25 >
+        	<img src="assets/images/DogIcon.png" />
+        </ion-col>
+        <ion-col (click)="setSpecies('Gato')" [ngClass]="{ 'Active': Appointment.species == 'Gato' }" class="CatIcon align-center" width-25 >
+        	<img src="assets/images/CatIcon.png" />
+        </ion-col>
+        <ion-col (click)="setSpecies('Ave')" [ngClass]="{ 'Active': Appointment.species == 'Ave' }" class="BirdIcon align-center" width-25 >
+        	<img src="assets/images/BirdIcon.png" />
+        </ion-col>
+        <ion-col (click)="setSpecies('Exótico')" [ngClass]="{ 'Active': Appointment.species == 'Exótico' }" class="ReptileIcon align-center" width-25 >
+        	<img src="assets/images/ReptileIcon.png" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="PawIcon align-center" width-10>
+	    	<img *ngIf="Appointment.species=='Cão'"  src="assets/images/DogPawIcon.png" > 
+	    	<img *ngIf="Appointment.species=='Gato'" src="assets/images/CatPawIcon.png" > 
+	    	<img *ngIf="Appointment.species=='Ave'" src="assets/images/BirdPawIcon.png" > 
+	    	<img *ngIf="Appointment.species=='Exótico'" src="assets/images/ExoticPawIcon.png" > 
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="Nome do Animal" [(ngModel)]="Appointment.pet" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-calendar"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="Data" [(ngModel)]="Appointment.date" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-time"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="Horário" [(ngModel)]="Appointment.time" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-map"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="Bairro" [(ngModel)]="Appointment.neighborhood" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-pin"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="Endereço" [(ngModel)]="Appointment.address" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="align-center" width-10>
+          <ion-icon name="md-home"></ion-icon>
+        </ion-col>
+        <ion-col width-90>
+          <ion-input type="text" placeholder="Complemento" [(ngModel)]="Appointment.address2" ></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   
+  </ion-list>
+
+  <button class="MainColor" ion-button block (click)="saveInfo()" >SALVAR</button>
+
+  <div class="Notify" *ngIf="JustSaved" [@fadeIn]="JustSavedStr" >Por favor, preencha todos os campos</div>
+
+</ion-content>

@@ -1,0 +1,45 @@
+favoritos .VetSearch {
+	text-align: center;
+    width: 85%;
+    margin: 0em auto 1em auto;
+    border-bottom: 1px solid #aaa;
+    font-size: 1.25em;
+}
+favoritos .VetSearch ion-input{
+	display: inline-block;
+	width: auto;
+}
+favoritos .VetSearch ion-icon{
+	position: relative;
+	top: 2px;
+    font-size: 1.3em;
+    margin-right: 5px;
+}
+favoritos .VetList {
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+favoritos .VetList ion-item{
+    border-bottom: 1px solid #aaa;
+}
+favoritos .VetList ion-item:last-child{
+    border-bottom: none;
+}
+favoritos .VetList .Lefty{
+    margin-left: 0.5em;
+}
+favoritos .VetList .Icon{
+    width: 18px;
+    margin-top: 5px;
+}
+favoritos .NothingHere p{
+    font-size: 1.25em;
+    font-style: italic;
+    line-height: 1.6em;
+    margin: 0;
+    text-align: center;
+}
+favoritos .NothingHere .Icon{
+    margin-top: 0.75em;
+    margin-bottom: 0.25em;
+}

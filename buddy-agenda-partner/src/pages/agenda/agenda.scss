@@ -1,0 +1,49 @@
+ion-card.card{
+    margin-bottom: 20px;
+}
+ion-card-header{
+	text-align: center;
+    background: #eee;
+}
+ion-card-header ion-icon{
+	float: left;
+}
+ion-card-header span{
+	font-weight: bold;
+}
+
+.CurrentDate {
+	text-align: center;
+	word-spacing: 15px;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.CurrentDate ion-icon {
+	font-size: 85%;
+}
+.CurrentDate ion-icon.disabled {
+	opacity: 0.4;
+}
+ion-card-content.card-content.card-content-md{
+	padding-top: 15px;
+}
+ion-card-content img{
+	width: 25px;
+	float: right;
+}
+ion-card-content ion-col.Icons{
+	position: relative;
+}
+ion-card-content ion-col.Icons ion-icon{
+	position: absolute;
+	bottom: 0;
+    left: 25%;
+	font-size: 1.5em;
+}
+
+p.Weekday{
+    font-size: 1em;
+    text-align: center;
+    font-weight: normal;
+    margin-top: 2.5px;
+}

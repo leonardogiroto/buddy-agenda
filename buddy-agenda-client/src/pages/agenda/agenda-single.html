@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{appointment.day | date : 'dd/MM/yyyy' }} - {{appointment.time}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<div class="PetTitle" >
+        <img *ngIf="appointment.species=='Cão'" src="assets/images/DogIcon.png" />
+        <img *ngIf="appointment.species=='Gato'" src="assets/images/CatIcon.png" />
+        <img *ngIf="appointment.species=='Ave'" src="assets/images/BirdIcon.png" />
+        <img *ngIf="appointment.species=='Exótico'" src="assets/images/ReptileIcon.png" />
+        <h3>{{appointment.pet}}</h3>
+	</div>
+
+	<ion-grid id="PetInfo" >
+
+		<ion-row style="margin-bottom: 1.5em;" >
+	    	<p>{{appointment.brief}}</p>
+	  	</ion-row>
+
+	  	<ion-row>
+	    	<ion-col width-10 >
+	    		<img src="assets/images/PetGenderIcon.png" > 
+	    	</ion-col>
+	    	<ion-col width-90 >
+	    		<p>{{appointment.gender}}</p>
+	    	</ion-col>
+	  	</ion-row>
+
+	  	<ion-row>
+	    	<ion-col width-10 >
+	    		<img *ngIf="appointment.species=='Cão'"  src="assets/images/DogPawIcon.png" > 
+	    		<img *ngIf="appointment.species=='Gato'" src="assets/images/CatPawIcon.png" > 
+	    	</ion-col>
+	    	<ion-col width-90 >
+	    		<p>{{appointment.race}}</p>
+	    	</ion-col>
+	  	</ion-row>
+
+	  	<ion-row>
+	    	<ion-col width-10 >
+	    		<ion-icon name="md-calendar" ></ion-icon>
+	    	</ion-col>
+	    	<ion-col width-90 >
+	    		<p>{{appointment.age}}</p>
+	    	</ion-col>
+	  	</ion-row>
+
+	  	<ion-row>
+	    	<ion-col width-10 >
+	    		<img src="assets/images/PetWeightIcon.png" > 
+	    	</ion-col>
+	    	<ion-col width-90 >
+	    		<p>{{appointment.weight}}</p>
+	    	</ion-col>
+	  	</ion-row>
+
+	  	<ion-row>
+	    	<ion-col width-10 >
+	    		<img src="assets/images/NeedleIcon.png" > 
+	    	</ion-col>
+	    	<ion-col width-90 >
+	    		<p *ngIf="appointment.spayed" >É castrado</p>
+	    		<p *ngIf="!appointment.spayed" >Não é castrado</p>
+	    	</ion-col>
+	  	</ion-row>
+
+	</ion-grid>
+	
+	<div class="ViewHistory" >
+		<a (click)="viewHistory(appointment.id)" >
+			<img src="assets/images/ClinicalHistoryIcon.png" > &nbsp;&nbsp;&nbsp;<span>Ver Histórico Clínico</span>
+		</a>
+	</div>
+
+</ion-content>

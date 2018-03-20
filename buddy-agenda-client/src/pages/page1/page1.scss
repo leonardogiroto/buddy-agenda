@@ -1,0 +1,51 @@
+page-page1 {
+
+}
+page-page1 .fixed-content{
+	background-image: url('../assets/images/OwnerBackground.png');
+	background-size: cover;
+}
+page-page1 .scroll-content{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+page-page1 h3, page-page1 .content-md p{
+	color: white;
+	text-align: center;
+}
+page-page1 h3{
+	font-family: 'Architects Daughter';
+	margin: 0;
+	font-size: 38px;
+}
+page-page1 .content-md p {
+	font-size: 21px;
+	line-height: 26px;
+	margin: 5px 0px 20px 0px;
+}
+page-page1 ion-item {
+	margin-bottom: 10px;
+}
+ion-grid, ion-col{
+	padding: 0;
+}
+ion-col.firstButton{
+	padding-right: 1%;
+}
+ion-col.secondButton{
+	padding-left: 1%;
+}
+button.MainColor, button.DefaultColor{
+	font-family: 'Architects Daughter';
+	font-size: 18px;
+	width: 100%;
+	margin: 0;
+}
+button.MainColor{
+	background: #008080;
+}
+button.DefaultColor{
+	background: white;
+	color: #111;
+}

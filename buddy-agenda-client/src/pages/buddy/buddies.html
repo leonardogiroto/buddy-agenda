@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Buddies <ion-icon class="HelpToggle" (click)="toggleHelp()" name="md-help" ></ion-icon></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<button class="AddButton" (click)="addBuddy()" >+</button>
+
+<ion-content padding>
+
+	<ion-grid class="List" >
+        <ion-row *ngFor="let Buddy of Buddies" (click)="viewBuddy(Buddy)" >
+          <ion-col class="Image" width-10>
+            <img *ngIf="Buddy.Species=='Cão'" src="assets/images/DogIcon.png" />
+            <img *ngIf="Buddy.Species=='Gato'" src="assets/images/CatIcon.png" />
+            <img *ngIf="Buddy.Species=='Ave'" src="assets/images/BirdIcon.png" />
+            <img *ngIf="Buddy.Species=='Exótico'" src="assets/images/ReptileIcon.png" />
+          </ion-col>
+          <ion-col class="Info" width-80 >
+          	<p>
+          		{{Buddy.Name}}<br>
+          		<small *ngIf="Buddy.HasEvent">Possui evento na agenda</small>
+          		<small *ngIf="!Buddy.HasEvent">Não possui nada marcado</small>
+          	</p>
+          </ion-col>
+          <ion-col width-10>
+          	<ion-icon name="md-create" ></ion-icon>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>
+
+<div id="Help" *ngIf="ShowHelp" (click)="toggleHelp()" >
+    <img class="Icon" src="assets/images/BuddiesHelpPage.png" />
+</div>

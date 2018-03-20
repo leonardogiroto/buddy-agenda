@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>CONSULTA</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div id="Payment" >
+
+    <h4>
+      <ion-icon name="logo-usd"></ion-icon> Pagamento
+    </h4>
+
+    <ion-list>
+
+      <ion-item style="border: none; box-shadow: none;" >
+        <ion-label><b>Valor</b></ion-label>
+        <ion-input type="text" placeholder="Valor da consulta" [textMask]="{mask: mask}" [(ngModel)]="DefinedValues.Value" ></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label>Dinheiro</ion-label>
+        <ion-checkbox color="main" [(ngModel)]="DefinedValues.Money" ></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Cheque</ion-label>
+        <ion-checkbox color="main" [(ngModel)]="DefinedValues.Cheque" ></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Cartão de Crédito</ion-label>
+        <ion-checkbox color="main" [(ngModel)]="DefinedValues.CreditCard" ></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Cartão de Débito</ion-label>
+        <ion-checkbox color="main" [(ngModel)]="DefinedValues.DebitCard" ></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Transferência Bancária</ion-label>
+        <ion-checkbox color="main" [(ngModel)]="DefinedValues.BankTransfer" ></ion-checkbox>
+      </ion-item>
+
+    </ion-list>
+    
+  </div>
+
+  <div id="WorkingHours" >
+
+    <h4>
+      <ion-icon name="md-time"></ion-icon> Horários de Trabalho
+    </h4>
+
+    <ion-list style="margin-bottom: 14px;" >
+      <ion-item style="border: none; box-shadow: none;" >
+        <ion-label><b>Duração</b></ion-label>
+        <ion-input type="text" placeholder="Duração da consulta" [textMask]="{mask: maskDuration}" [(ngModel)]="DefinedValues.Duration" ></ion-input>
+      </ion-item>
+    </ion-list>
+    <p class="Description" >Duração média em minutos. A partir deste valor, o aplicativo definirá quais horários estarão disponíveis para agendamento.</p>
+
+    <div class="Weekday" *ngFor="let Wh of WorkingHours" >
+      <h5>{{Wh.Weekday}}</h5>
+      <div class="WhDetails" >
+        <p>Das {{Wh.StartsAt}} às {{Wh.EndsAt}} <ion-icon name="md-create" (click)="openModal(Wh)" ></ion-icon></p>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="Attendance" >
+
+    <h4>
+      <ion-icon name="md-call"></ion-icon> Atendimento
+    </h4>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label>Indicar aos clientes que você utiliza o <b>Whatsapp</b></ion-label>
+        <ion-checkbox color="main" [(ngModel)]="DefinedValues.Whatsapp" ></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Indicar aos clientes que você utiliza o <b>Telegram</b></ion-label>
+        <ion-checkbox color="main" [(ngModel)]="DefinedValues.Telegram" ></ion-checkbox>
+      </ion-item>
+
+    </ion-list>
+
+  </div>
+
+  <div id="Regions" >
+
+    <h4>
+      <ion-icon name="md-map"></ion-icon> Regiões Atendidas
+    </h4>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label>Todas</ion-label>
+        <ion-checkbox color="main" [(ngModel)]="AllSelected" (click)="selectAll()" ></ion-checkbox>
+      </ion-item>
+
+      <ion-item *ngFor="let r of DefinedRegions" >
+        <ion-label>{{r.Region}}</ion-label>
+        <ion-checkbox color="main" [(ngModel)]="r.Active" ></ion-checkbox>
+      </ion-item>
+
+    </ion-list>
+    
+  </div>
+
+  <button class="MainColor" ion-button block (click)="saveInfo()" >SALVAR</button>
+
+  <div class="Notify" *ngIf="JustSaved" [@fadeIn]="JustSavedStr" >Dados salvos com sucesso!</div>
+
+</ion-content>

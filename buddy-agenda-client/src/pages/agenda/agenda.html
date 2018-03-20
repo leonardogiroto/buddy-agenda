@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>AGENDA <ion-icon class="HelpToggle" (click)="toggleHelp()" name="md-help" ></ion-icon></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<button class="AddButton" (click)="newAppointment()" >+</button>
+
+<ion-content padding>
+
+  <div class="CurrentDate" >
+    <div style="display: inline-block;" (click)="previousDay()" >
+      <ion-icon name="ios-arrow-back" ></ion-icon><ion-icon name="ios-arrow-back" ></ion-icon>
+    </div>
+    <span (click)="openCalendar()" >{{SearchDate | date : 'dd/MM' }}</span>
+    <div style="display: inline-block;" (click)="nextDay()" >
+      <ion-icon name="ios-arrow-forward" ></ion-icon><ion-icon name="ios-arrow-forward" ></ion-icon>
+    </div>
+  </div>
+  <p class="Weekday" >( {{SearchDate | date : 'EEEE'}} )</p>
+
+  <p class="NothingHere" *ngIf="getAppointments(SearchDate).length==0" >Não há consultas para esta data.</p>
+
+  <ion-card *ngFor="let ap of getAppointments(SearchDate) | orderByPipe" >
+    <ion-card-header>
+      <ion-icon name="md-calendar" (click)="viewAppointment(ap)" ></ion-icon> <span class="Left" (click)="viewAppointment(ap)" >{{ap.pet}} - {{ap.time}}h</span> <span class="Right" ><ion-icon name="md-trash" (click)="cancelAppointment(ap)" ></ion-icon></span>
+    </ion-card-header>
+    <ion-card-content (click)="viewAppointment(ap)" >
+      <ion-grid>
+        <ion-row>
+          <ion-col width-90 >
+            <p>{{ap.title}}</p>
+            <p *ngIf="!ap.isHome" >{{ap.address}}</p>
+            <p *ngIf="!ap.isHome" >{{ap.address2}}</p>
+            <p *ngIf="ap.isHome" >Em casa</p>
+            <p class="bold" *ngIf="ap.doctor" >{{ap.doctor}}</p>
+            <p class="bold" >{{ap.ManuallyAdded ? 'Adicionado Manualmente' : ap.phone}}</p>
+          </ion-col>
+          <ion-col class="Icons" width-10>
+            <img *ngIf="ap.species=='Cão'" src="assets/images/DogIcon.png" />
+            <img *ngIf="ap.species=='Gato'" src="assets/images/CatIcon.png" />
+            <img *ngIf="ap.species=='Ave'" src="assets/images/BirdIcon.png" />
+            <img *ngIf="ap.species=='Exótico'" src="assets/images/ReptileIcon.png" />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="Notify" *ngIf="JustSaved" [@fadeIn]="JustSavedStr" >Consulta cancelada com sucesso!</div>
+
+</ion-content>
+
+<div id="Help" *ngIf="ShowHelp" (click)="toggleHelp()" >
+    <img class="Icon" src="assets/images/AgendaPageHelp.png" />
+</div>

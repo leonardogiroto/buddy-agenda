@@ -1,0 +1,36 @@
+#PetInfo ion-icon{
+    display: inline-block;
+    font-size: 1.85em;
+    padding: 6px;
+}
+#PetInfo img{
+    padding: 6px;
+}
+#PetInfo p{
+    margin: 6px;
+    font-size: 1.2em;
+}
+#PetInfo ion-row{
+    margin: 2.5px 0px;
+}
+p.NothingHere{
+    font-size: 1.3em;
+    text-align: center;
+    padding: 5px 0px;
+}
+
+.ViewHistory {
+	text-align: center;
+    padding: 1.5em;
+    font-size: 1.4em;
+}
+.ViewHistory a{
+	color: #1a1a1a;
+	text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ViewHistory a img{
+    width: 30px;
+}

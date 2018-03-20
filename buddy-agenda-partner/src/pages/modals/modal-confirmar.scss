@@ -1,0 +1,25 @@
+modal-confirmar.ion-page.show-page {
+	position: initial;
+    width: 85%;
+    height: 260px;
+    margin: 0 auto;
+}
+.ButtonsGrid{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+}
+
+#ConfirmModal h2, #ConfirmModal h3, #ConfirmModal p{
+    text-align: center;
+}
+#ConfirmModal h2{
+    font-size: 1.5em;
+}
+#ConfirmModal h3{
+    font-size: 1.4em;
+}
+#ConfirmModal p{
+    font-size: 1.25em;
+}

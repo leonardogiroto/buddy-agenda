@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Agendar Horário</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<h2 *ngIf="!WaitingConfirm" >Solicitação enviada com sucesso!</h2>
+	<h3>{{Date | date : 'dd/MM'}} às {{Time}}h</h3>
+
+	<div class="Buddy" *ngIf="WaitingConfirm" >
+		<p>Para qual Buddy?</p>
+		<select [(ngModel)]="Pet" >
+			<option>Fofuxo</option>
+			<option>Oliver</option>
+			<option>Toby</option>
+		</select>
+
+		<p>O que é importante que o<br>veterinário saiba?</p>
+		<textarea [(ngModel)]="Description" placeholder="Descrição" ></textarea>
+	</div>
+
+	<div class="Buddy" *ngIf="!WaitingConfirm" >
+		<p>
+			{{Pet}}<br>
+			<b>{{Doctor}}</b>
+		</p>
+	</div>
+
+	<ion-grid *ngIf="WaitingConfirm" class="ButtonsGrid" >
+	  <ion-row>
+	    <ion-col width-50 style="padding-left: 2%;" >
+	    	<button class="DefaultColor" ion-button block (click)="closeModal()" >VOLTAR</button>
+	    </ion-col>
+	    <ion-col width-50 style="padding-right: 2%;" >
+	    	<button class="MainColor" ion-button block (click)="confirm()" >CONFIRMAR</button>
+	    </ion-col>
+	  </ion-row>
+	</ion-grid>
+
+	<ion-grid *ngIf="!WaitingConfirm" class="ButtonsGrid" >
+	  <ion-row>
+	    <ion-col width-50 style="padding-left: 2%;" >
+	    	<button class="DefaultColor" ion-button block (click)="closeModal()" >VOLTAR</button>
+	    </ion-col>
+	    <ion-col width-50 style="padding-right: 2%;" >
+	    	<button class="MainColor" ion-button block (click)="saveModal()" >AGENDA</button>
+	    </ion-col>
+	  </ion-row>
+	</ion-grid>
+
+	<div class="Notify" *ngIf="JustSaved" [@fadeIn]="JustSavedStr" >Por favor, preencha todos os campos</div>
+
+</ion-content>
+

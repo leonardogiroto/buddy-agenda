@@ -1,0 +1,62 @@
+ion-item ion-checkbox[color="main"] .checkbox-icon.checkbox-checked{
+	background: #008080;
+	border-color: #008080;
+}
+.list-md .item-block .item-inner{
+	border: none;
+}
+#Payment h4, #WorkingHours h4, #Attendance h4, #Regions h4{
+	text-align: center;
+    border-bottom: 2px solid #008080;
+    padding-bottom: 10px;
+}
+#Payment h4 ion-icon, #WorkingHours h4 ion-icon, #Attendance h4 ion-icon, #Regions h4 ion-icon{
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+}
+ion-item {
+	border: none;
+}
+ion-item.item-input ion-label.label-md  {
+    color: black;
+}
+ion-item.item-input ion-input {
+    border-bottom: 1px solid #dedede;
+}
+#WorkingHours{
+    padding-top: 5px;
+}
+#WorkingHours .Weekday {
+    padding: 10px 15px;
+    float: left;
+    width: 100%;
+}
+#WorkingHours .Weekday .WhDetails{
+	float: left;
+    width: 100%;
+}
+#WorkingHours .Weekday .WhDetails p{
+	margin: 0;
+}
+#WorkingHours .Weekday .WhDetails ion-icon{
+    margin-left: 5px;
+}
+
+#Attendance, #WorkingHours, #Regions{
+    float: left;
+    width: 100%;
+}
+
+#Attendance,{
+    margin-top: 30px;
+}
+#Regions {
+    margin-top: 20px;
+}
+#Attendance ion-label, #Regions ion-label{
+    white-space: initial;
+}
+p.Description{
+    padding: 5px 15px;
+}
