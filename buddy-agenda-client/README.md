@@ -1,4 +1,4 @@
-"# My project's README"
+Mock App for Pet Owners.
 
 Required Installing:
 
